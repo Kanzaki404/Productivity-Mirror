@@ -46,6 +46,7 @@
     "electron": "^6.0.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
+    "request": "^2.88.0",
     "standard": "^14.3.1"
   },
   "devDependencies": {

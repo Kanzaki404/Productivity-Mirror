@@ -2,6 +2,7 @@ import '../assets/css/App.css'
 import React from 'react'
 import MyDate from './dates' // import date component
 import ToDo from './ToDo' // import date component
+import MyWeather from './weather'
 class App extends React.Component {
   constructor (props) {
     super(props) // inherits react class above
@@ -19,6 +20,9 @@ class App extends React.Component {
         </div>
         <div className='tasks'>
           <ToDo />
+        </div>
+        <div>
+          <MyWeather />
         </div>
       </div>
     )
