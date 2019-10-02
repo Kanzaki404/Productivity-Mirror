@@ -11,17 +11,27 @@ button{
     border: none;
     font-size: 150%;
     outline: 0;
-    padding-bottom: 5px
+    padding-bottom: 5px;
+    position: relative;
+    
     
 }
 .smallbuttons{
     background-image: url("../images/add.png");
-    background-size: 100%;
+    background-size: 80%;
     width: 25px;
     background-repeat: no-repeat;
-   
+    height: 25px;
+    margin-left: 5px;
 }
-
+#cancelButton{
+    background-image: url("../images/cancel.png");
+    background-size: 70%;
+    width: 25px;
+    background-repeat: no-repeat;
+    height: 25px;
+    margin-left: 1px;
+}
 
 .input {
     border: 0;
@@ -32,24 +42,30 @@ button{
     border-bottom: 1px solid white;
   }
 .TitleDivTasks{
-    display: inline-block;
-    
-    text-align: left;
+   color:white;
 }
    
 .tasks{
-    color: white;
-    text-align: center;
+    width: 40%;
 }
 .dateAndTime{
+    display: inline-block;
+    padding-left: 76px;
+    width: 300px;
     text-align: center;
     color: white; 
 }
 #time{
- font-size: 300%;  
+    width: max-content;
+    font-size: 300%;  
+    margin-bottom: -25px;
  
 }
 
 #date{
     font-size: 150%;
+}
+
+.inputAndButton{
+    padding: 10px;
 }

@@ -49,6 +49,7 @@ class ToDo extends React.Component {
     }
   }
 
+  /*
   removeTask (num, e) {
     const temp1 = [...this.state.tasks1]
     const temp2 = [...this.state.tasks2]
@@ -60,46 +61,63 @@ class ToDo extends React.Component {
       case 3: temp3.splice(e.target.id, 1); promise = new Promise(resolve => { resolve(this.setState({ tasks3: temp3 })) }); promise.then(() => console.log(this.state.tasks3)); break
     }
   }
+*/
+  removeTask (num, e) {
+    console.log(document.getElementById(e.target.id).checked)
+    if (document.getElementById(e.target.id).checked) {
+      switch (num) {
+        case 1:document.getElementById('displaytaskA' + e.target.id).style.textDecoration = 'line-through'; break
+        case 2:document.getElementById('displaytaskB' + e.target.id).style.textDecoration = 'line-through'; break
+        case 3:document.getElementById('displaytaskC' + e.target.id).style.textDecoration = 'line-through'; break
+      }
+    } else {
+      switch (num) {
+        case 1:document.getElementById('displaytaskA' + e.target.id).style.textDecoration = 'none'; break
+        case 2:document.getElementById('displaytaskB' + e.target.id).style.textDecoration = 'none'; break
+        case 3:document.getElementById('displaytaskC' + e.target.id).style.textDecoration = 'none'; break
+      }
+    }
+  }
 
   render () {
     console.log(this.state.tasks)
     return (
       <div className='TitleDivTasks'>
         <button className='FirstTaskButton' onClick={this.addTask.bind(this, 1)}>Most Important Tasks of the Day</button>
-        <br />
+
         {this.state.addTaskOne &&
-          <div>
+          <div className='inputAndButton'>
             <input className='input' id='input1' type='text' autoFocus onKeyDown={this.confirmTask.bind(this, 1)} />
             <button className='smallbuttons' id='addButton' onClick={this.confirmTask.bind(this, 1)} />
-            <button onClick={this.cancelTaskInput.bind(this, 1)}>x</button>
+            <button id='cancelButton' onClick={this.cancelTaskInput.bind(this, 1)} />
 
           </div>}
         {this.state.tasks1.map((task, index) => {
-          return <div className='displayTask' id={'displaytask' + index} key={index}><button id={index} onClick={this.removeTask.bind(this, 1)}>x</button>{(index + 1) + '.  ' + task}</div>
+          return <div className='displayTask' id={'displaytaskA' + (10 + index)} key={index}><input type='checkbox' id={10 + index} onClick={this.removeTask.bind(this, 1)} />{(index + 1) + '.  ' + task}</div>
         }
         )}
         <button className='SecondTaskButton' onClick={this.addTask.bind(this, 2)}>Secondary Tasks of the Day</button>
-        <br />
+
         {this.state.addTaskTwo &&
-          <div>
+          <div className='inputAndButton'>
             <input className='input' id='input2' type='text' autoFocus />
             <button className='smallbuttons' id='addButton' onClick={this.confirmTask.bind(this, 2)} />
-            <button onClick={this.cancelTaskInput.bind(this, 2)}>x</button>
+            <button id='cancelButton' onClick={this.cancelTaskInput.bind(this, 2)} />
           </div>}
         {this.state.tasks2.map((task, index) => {
-          return <div className='displayTask' id={'displaytask' + index} key={index}><button id={index} onClick={this.removeTask.bind(this, 2)}>x</button>{(index + 1) + '.  ' + task}</div>
+          return <div className='displayTask' id={'displaytaskB' + (20 + index)} key={index}><input type='checkbox' id={20 + index} onClick={this.removeTask.bind(this, 2)} />{(index + 1) + '.  ' + task}</div>
         }
         )}
         <button className='ThirdTaskButton' onClick={this.addTask.bind(this, 3)}>Other Tasks of the Day</button>
-        <br />
+
         {this.state.addTaskThree &&
-          <div>
+          <div className='inputAndButton'>
             <input className='input' id='input3' type='text' autoFocus />
             <button className='smallbuttons' id='addButton' onClick={this.confirmTask.bind(this, 3)} />
-            <button onClick={this.cancelTaskInput.bind(this, 3)}>x</button>
+            <button id='cancelButton' onClick={this.cancelTaskInput.bind(this, 3)} />
           </div>}
         {this.state.tasks3.map((task, index) => {
-          return <div className='displayTask' id={'displaytask' + index} key={index}><button id={index} onClick={this.removeTask.bind(this, 3)}>x</button>{(index + 1) + '.  ' + task}</div>
+          return <div className='displayTask' id={'displaytaskC' + (30 + index)} key={index}><input type='checkbox' id={30 + index} onClick={this.removeTask.bind(this, 3)} />{(index + 1) + '.  ' + task}</div>
         }
         )}
       </div>
