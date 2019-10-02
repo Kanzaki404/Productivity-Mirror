@@ -1,0 +1,55 @@
+/*@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');*/
+@import url('https://fonts.googleapis.com/css?family=Orbitron|Roboto&display=swap');
+body{ 
+    font-family: 'Orbitron', sans-serif;
+    background-color: black;
+}
+button{
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    background-color: black;
+    border: none;
+    font-size: 150%;
+    outline: 0;
+    padding-bottom: 5px
+    
+}
+.smallbuttons{
+    background-image: url("../images/add.png");
+    background-size: 100%;
+    width: 25px;
+    background-repeat: no-repeat;
+   
+}
+
+
+.input {
+    border: 0;
+    outline: 0;
+    width: 85%;
+    color: white;
+    background: transparent;
+    border-bottom: 1px solid white;
+  }
+.TitleDivTasks{
+    display: inline-block;
+    
+    text-align: left;
+}
+   
+.tasks{
+    color: white;
+    text-align: center;
+}
+.dateAndTime{
+    text-align: center;
+    color: white; 
+}
+#time{
+ font-size: 300%;  
+ 
+}
+
+#date{
+    font-size: 150%;
+}
